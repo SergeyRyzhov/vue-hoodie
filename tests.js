@@ -1,5 +1,5 @@
 var Vue = require('vue')
-var VueHoodie = require('./index.js')
+var VueHoodie = require('./dist/index.js')
 
 var PouchDB = require('pouchdb');
 var assert = require('assert');

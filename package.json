@@ -2,9 +2,10 @@
   "name": "vue-hoodie",
   "version": "1.0.0",
   "description": "Vue.js plugin for hoodie",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "node tests.js"
+    "test": "node tests.js",
+    "build": "rollup index.js --format umd --name 'vue-hoodie' --file dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "vue": "^2.5.16"
   },
   "devDependencies": {
-    "pouchdb": "^6.4.3"
+    "pouchdb": "^6.4.3",
+    "rollup": "^0.57.1"
   }
 }
