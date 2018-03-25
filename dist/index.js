@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('vue'), require('@hoodie/client')) :
     typeof define === 'function' && define.amd ? define(['vue', '@hoodie/client'], factory) :
-    (global[''vue-hoodie''] = factory(global.vue,global.Hoodie));
+    (global['vue-hoodie'] = factory(global.vue,global.Hoodie));
 }(this, (function (vue,Hoodie) { 'use strict';
 
     vue = vue && vue.hasOwnProperty('default') ? vue['default'] : vue;
