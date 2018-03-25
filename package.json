@@ -1,0 +1,31 @@
+{
+  "name": "vue-hoodie",
+  "version": "1.0.0",
+  "description": "Vue.js plugin for hoodie",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeyRyzhov/vue-hoodie.git"
+  },
+  "keywords": [
+    "hoodie",
+    "vuejs",
+    "plugin"
+  ],
+  "author": "Sergey Ryzhov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SergeyRyzhov/vue-hoodie/issues"
+  },
+  "homepage": "https://github.com/SergeyRyzhov/vue-hoodie#readme",
+  "dependencies": {
+    "hoodie": "^28.2.6",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "pouchdb": "^6.4.3"
+  }
+}
