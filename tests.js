@@ -1,23 +1,20 @@
 var Vue = require('vue')
 var VueHoodie = require('./dist/index.js')
-
+var Hoodie = require('@hoodie/client');
 var PouchDB = require('pouchdb');
 var assert = require('assert');
 
-Vue.use(VueHoodie, {
+Vue.use(VueHoodie)
+
+var hoodie = new Hoodie({
     PouchDB,
     url: 'http://localost:5984'
 });
 
-
-assert.ok(VueHoodie.$hoodie !== null);
-
-assert.ok(Vue.$hoodie !== null);
-
 var view = new Vue({
-
+    hoodie
 });
 
-assert.ok(view.$hoodie !== null);
+assert.ok(view.$hoodie != null);
 
 console.log('Tests are passed')
