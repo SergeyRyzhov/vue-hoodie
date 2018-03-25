@@ -22,10 +22,9 @@
     "url": "https://github.com/SergeyRyzhov/vue-hoodie/issues"
   },
   "homepage": "https://github.com/SergeyRyzhov/vue-hoodie#readme",
-  "dependencies": {
-    "vue": "^2.5.16"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "vue": "^2.5.16",
     "hoodie": "^28.2.6",
     "pouchdb": "^6.4.3",
     "rollup": "^0.57.1"
