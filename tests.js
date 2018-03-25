@@ -9,6 +9,11 @@ Vue.use(VueHoodie, {
     url: 'http://localost:5984'
 });
 
+
+assert.ok(VueHoodie.$hoodie !== null);
+
+assert.ok(Vue.$hoodie !== null);
+
 var view = new Vue({
 
 });
