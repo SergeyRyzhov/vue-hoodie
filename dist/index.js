@@ -1,59 +1,60 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global['vue-hoodie'] = factory());
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global['vue-hoodie'] = factory());
 }(this, (function () { 'use strict';
 
-    let Vue = null;
+  var Vue = null;
 
-    var applyMixin = function (Vue) {
-        var version = Number(Vue.version.split('.')[0]);
+  var applyMixin = function(Vue) {
+    var version = Number(Vue.version.split(".")[0]);
 
-        if (version >= 2) {
-            Vue.mixin({
-                beforeCreate: hoodieInit
-            });
-        } else {
-            var _init = Vue.prototype._init;
-            Vue.prototype._init = function (options) {
-                if (options === void 0) options = {};
+    if (version >= 2) {
+      Vue.mixin({
+        beforeCreate: hoodieInit
+      });
+    } else {
+      var _init = Vue.prototype._init;
+      Vue.prototype._init = function(options) {
+        if (options === void 0) options = {};
 
-                options.init = options.init ?
-                    [hoodieInit].concat(options.init) :
-                    hoodieInit;
-                _init.call(this, options);
-            };
-        }
-
-        function hoodieInit() {
-            var options = this.$options;
-            if (options.hoodie) {
-                this.$hoodie = typeof options.hoodie === 'function' ?
-                    options.hoodie() :
-                    options.hoodie;
-            } else if (options.parent && options.parent.$hoodie) {
-                this.$hoodie = options.parent.$hoodie;
-            }
-        }
-    };
-
-    function install(_Vue, options) {
-        if (Vue && _Vue === Vue) {
-            if (process.env.NODE_ENV !== 'production') {
-                console.error(
-                    '[hoodie] already installed. Vue.use(VueHoodie) should be called only once.'
-                );
-            }
-            return
-        }
-        Vue = _Vue;
-        applyMixin(_Vue, options);
+        options.init = options.init
+          ? [hoodieInit].concat(options.init)
+          : hoodieInit;
+        _init.call(this, options);
+      };
     }
 
-    const VueHoodie = {
-        install
-    };
+    function hoodieInit() {
+      var options = this.$options;
+      if (options.hoodie) {
+        this.$hoodie =
+          typeof options.hoodie === "function"
+            ? options.hoodie()
+            : options.hoodie;
+      } else if (options.parent && options.parent.$hoodie) {
+        this.$hoodie = options.parent.$hoodie;
+      }
+    }
+  };
 
-    return VueHoodie;
+  function install(_Vue, options) {
+    if (Vue && _Vue === Vue) {
+      if (process.env.NODE_ENV !== "production") {
+        console.error(
+          "[hoodie] already installed. Vue.use(VueHoodie) should be called only once."
+        );
+      }
+      return;
+    }
+    Vue = _Vue;
+    applyMixin(_Vue, options);
+  }
+
+  var VueHoodie = {
+    install: install
+  };
+
+  return VueHoodie;
 
 })));
