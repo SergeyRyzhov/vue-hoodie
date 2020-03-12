@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global['vue-hoodie'] = factory());
+  (global = global || self, global['vue-hoodie'] = factory());
 }(this, (function () { 'use strict';
 
   var Vue = null;
@@ -48,7 +48,7 @@
       return;
     }
     Vue = _Vue;
-    applyMixin(_Vue, options);
+    applyMixin(_Vue);
   }
 
   var VueHoodie = {
