@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "node tests.js",
-    "build": "rollup index.js --format umd --name \"vue-hoodie\" --file dist/index.js"
+    "build": "rollup index.js --format umd --name \"vue-hoodie\" --file dist/index.js",
+    "start": "hoodie"
   },
   "repository": {
     "type": "git",
